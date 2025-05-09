@@ -1,0 +1,9 @@
+# Placeholder for requirements.txt
+tensorflow>=2.9.0
+opencv-python>=4.5.5.64
+numpy>=1.23.0
+matplotlib>=3.5.1
+pillow>=9.1.0
+requests>=2.27.1
+scikit-learn>=1.1.0
+pandas 

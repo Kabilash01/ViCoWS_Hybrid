@@ -1,0 +1,12 @@
+{
+    "weather": "Rainy",
+    "crash_detected": true,
+    "vsv": 64.2,
+    "vlv": 58.5,
+    "headway": 4.8,
+    "risk": "High Risk",
+    "tph": 0.83,
+    "tph_level": "Critical",
+    "timestamp": "2025-05-04 21:35:01"
+  }
+  

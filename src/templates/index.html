@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ViCoWS Hybrid Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta http-equiv="refresh" content="5">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      🚗 ViCoWS Hybrid Dashboard
+      <span class="timestamp">Last Update: {{ data.timestamp }}</span>
+    </header>
+
+    <div class="card weather">
+      <h2>🌦️ Weather</h2>
+      <p>{{ data.weather }}</p>
+    </div>
+
+    <div class="card crash {% if data.crash_detected %}alert{% else %}safe{% endif %}">
+      <h2>🚨 Crash Status</h2>
+      <p>{% if data.crash_detected %}Crash Detected!{% else %}No Crash Detected{% endif %}</p>
+    </div>
+
+    <div class="card risk">
+      <h2>🧠 Risk Analysis</h2>
+      <ul>
+        <li><strong>Risk Level:</strong> {{ data.risk }}</li>
+        <li><strong>VSV:</strong> {{ data.vsv }} km/h</li>
+        <li><strong>VLV:</strong> {{ data.vlv }} km/h</li>
+        <li><strong>Headway:</strong> {{ data.headway }} m</li>
+        <li><strong>TPH:</strong> {{ data.tph }} sec ({{ data.tph_level }})</li>
+      </ul>
+    </div>
+
+    <div class="card image">
+      <h2>📸 Last Crash Frame</h2>
+      <img src="{{ url_for('crash_frame', filename=crash_img) }}" alt="Crash Frame" width="480">
+    </div>
+  </div>
+</body>
+</html>
